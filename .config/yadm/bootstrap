@@ -1,0 +1,13 @@
+#!/bin/sh
+
+umask g-w,o-w
+
+if [ ! -d ~/.oh-my-zsh ]
+then
+    git clone -c core.eol=lf -c core.autocrlf=false \
+        -c fsck.zeroPaddedFilemode=ignore \
+        -c fetch.fsck.zeroPaddedFilemode=ignore \
+        -c receive.fsck.zeroPaddedFilemode=ignore \
+        --depth=1 --branch master \
+        https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+fi
