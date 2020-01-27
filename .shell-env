@@ -1,5 +1,17 @@
 export LANG="pt_BR.UTF-8"
 export EDITOR="vi"
-export PATH="$HOME/bin:$PATH"
 export COMPOSE_HTTP_TIMEOUT=240
 export DOCKER_CLIENT_TIMEOUT=240
+
+path=($HOME/bin $HOME/.local/bin $path)
+
+if which yarn &> /dev/null
+then
+    path=($(yarn global bin) $path)
+fi
+if which composer &> /dev/null
+then
+    path=($(composer global config bin-dir --absolute -q) $path)
+fi
+
+export PATH
