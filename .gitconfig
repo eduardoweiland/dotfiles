@@ -9,7 +9,27 @@
 
 [alias]
     st = status
+    t = status
     co = checkout
     br = branch
     ci = commit
     re = rebase
+    di = difftool
+    tree = log --graph --pretty=oneline --abbrev-commit
+    brlog = "for-each-ref --sort='-committerdate:iso8601' --format=' %(committerdate:iso8601)%09%1B[1;32m%(refname:short)%1B[m%09%09%(subject)' refs/heads"
+    authors = "shortlog -s -n --no-merges origin/master"
+
+[push]
+    default = simple
+
+[color]
+    ui = auto
+
+[diff]
+    tool = meld
+
+[difftool]
+    prompt = false
+
+[merge]
+    renamelimit = 2000
