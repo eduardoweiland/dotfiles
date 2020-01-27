@@ -1,0 +1,13 @@
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias grep='grep --color=auto'
+alias ap='ansible-playbook'
+
+if which nvim &> /dev/null
+then
+    alias vim='nvim'
+    alias vi='nvim'
+elif which vim &> /dev/null
+then
+    alias vi='vim'
+fi
