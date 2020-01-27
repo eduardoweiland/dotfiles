@@ -26,4 +26,6 @@ plugins=(git docker-compose)
 source $ZSH/oh-my-zsh.sh
 
 test -r ~/.shell-env && source ~/.shell-env
+test -r ~/.shell-env.local && source ~/.shell-env.local
 test -r ~/.shell-aliases && source ~/.shell-aliases
+test -r ~/.shell-aliases.local && source ~/.shell-aliases.local
