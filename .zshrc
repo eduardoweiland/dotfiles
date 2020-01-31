@@ -18,7 +18,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Plugins to load
 # Standard plugins can be found in $ZSH/plugins/*
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git docker-compose)
+plugins=(git docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
