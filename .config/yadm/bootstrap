@@ -2,6 +2,7 @@
 
 umask g-w,o-w
 
+# Oh My Zsh
 if [ ! -d ~/.oh-my-zsh ]
 then
     git clone -c core.eol=lf -c core.autocrlf=false \
@@ -12,6 +13,7 @@ then
         https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 fi
 
+# tmux plugins
 mkdir -p ~/.tmux/plugins
 
 if [ ! -d ~/.tmux/plugins/tpm ]
@@ -28,3 +30,11 @@ if [ -x ~/.tmux/plugins/tpm/bin/update_plugins ]
 then
     ~/.tmux/plugins/tpm/bin/update_plugins all
 fi
+
+# Nerd Fonts
+mkdir -p ~/.fonts
+cd ~/.fonts
+base_url=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DejaVuSansMono
+curl -sSfLo 'DejaVuSansMono-Nerd-Font-Mono.ttf' $base_url/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.ttf
+curl -sSfLo 'DejaVuSansMono-Bold-Nerd-Font-Mono.ttf' $base_url/Bold/complete/DejaVu%20Sans%20Mono%20Bold%20Nerd%20Font%20Complete%20Mono.ttf
+cd -
