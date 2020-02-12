@@ -27,7 +27,6 @@ launcher_padding = 4 0 4
 launcher_background_id = 0
 launcher_icon_background_id = 0
 launcher_icon_size = 24
-launcher_item_app = xfce4-appfinder.desktop
 launcher_item_app = firefox.desktop
 launcher_item_app = chromium-browser.desktop
 launcher_item_app = xfce4-terminal.desktop

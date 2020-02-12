@@ -1,0 +1,10 @@
+configuration {
+    modi: "drun,run,window";
+    width: 45;
+    lines: 25;
+    columns: 1;
+    font: "Source Sans Pro SemiBold 13";
+    show-icons: true;
+    icon-theme: "Flat-Remix-Green-Dark";
+    theme: "android_notification";
+}
