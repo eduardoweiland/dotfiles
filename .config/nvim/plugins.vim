@@ -33,6 +33,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/committia.vim'
+Plug 'chaoren/vim-wordmotion'
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() } }
