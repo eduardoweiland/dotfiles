@@ -1,4 +1,10 @@
-alias ls='ls --color=auto'
+if which lsd &> /dev/null
+then
+    alias ls='lsd'
+else
+    alias ls='ls --color=auto'
+fi
+
 alias ll='ls -lh'
 alias grep='grep --color=auto'
 alias ap='ansible-playbook'
