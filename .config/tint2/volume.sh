@@ -2,11 +2,11 @@
 # based on https://petermolnar.net/hacking-tint2-panel-weather-cpu-temperature-and-volume-executors/
 
 if [ "$1" == "up" ]; then
-    amixer -D pulse sset Master 5%+ &> /dev/null
+    pactl set-sink-volume @DEFAULT_SINK@ +5% &> /dev/null
 elif [ "$1" == "down" ]; then
-    amixer -D pulse sset Master 5%- &> /dev/null
+    pactl set-sink-volume @DEFAULT_SINK@ -5% &> /dev/null
 elif [ "$1" == "mute" ]; then
-    amixer -D pulse sset Master 1+ toggle
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 fi
 
 mixer_output=$(amixer sget -D pulse Master)
