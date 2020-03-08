@@ -1,0 +1,29 @@
+"xkill"
+    Control + Alt + Escape
+
+"xflock4"
+    Control + Alt + L
+
+"xfce4-terminal --maximize"
+    Control + Alt + T
+
+"xfce4-session-logout"
+    Control + Alt + Delete
+
+"rofi -show drun"
+    Alt + F1
+
+"rofi -show run"
+    Alt + F2
+
+"rofi -show window"
+    Alt + F3
+
+"flameshot gui"
+    Print
+
+"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+    Mod4 + Up
+
+"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    Mod4 + Down
