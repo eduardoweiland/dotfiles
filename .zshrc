@@ -13,7 +13,7 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Format for the command execution time stamp shown in the history command output.
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS="%d/%m/%Y %T"
 
 # Plugins to load
 # Standard plugins can be found in $ZSH/plugins/*
