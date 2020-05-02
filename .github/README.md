@@ -2,6 +2,8 @@
 
 My dotfiles. Managed by [yadm](https://yadm.io/).
 
+![Screenshot of a terminal using this config](screenshot.png)
+
 [MIT](LICENSE.md) except where otherwise noted.
 
 ## Setup
