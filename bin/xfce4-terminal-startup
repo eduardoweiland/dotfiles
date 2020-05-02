@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if (which xdotool && xdotool search --class xfce4-terminal) &> /dev/null
+then
+    # There is already one open terminal window, don't allow a second one
+    exit 0
+fi
+
+tmux attach || tmux new
