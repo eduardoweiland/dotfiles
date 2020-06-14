@@ -41,5 +41,6 @@ Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() } }
 " Languages
 Plug 'leafgarland/typescript-vim',    { 'for': 'typescript' }
 Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'html.handlebars' }
+Plug 'Freedzone/kerbovim',            { 'for': 'kerboscript', 'do': 'dos2unix */*.vim' }
 
 call plug#end()

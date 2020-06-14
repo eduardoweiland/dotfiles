@@ -1,0 +1,17 @@
+{
+    "suggest": {
+        "autoTrigger": "always",
+        "enablePreview": true,
+        "minTriggerInputLength": 2
+    },
+    "languageserver": {
+        "kls": {
+            "command": "kls",
+            "args": ["--stdio"],
+            "shell": true,
+            "filetypes": ["kerboscript"],
+            "initializationOptions": {},
+            "settings": {}
+        }
+    }
+}
