@@ -9,6 +9,7 @@
 
 [alias]
     st = status
+    ts = status
     t = status
     co = checkout
     br = branch
