@@ -36,7 +36,7 @@ Plug 'rhysd/committia.vim'
 Plug 'chaoren/vim-wordmotion'
 
 " Autocomplete
-Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() } }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Languages
 Plug 'leafgarland/typescript-vim',    { 'for': 'typescript' }
