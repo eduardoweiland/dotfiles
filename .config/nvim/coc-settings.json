@@ -1,9 +1,21 @@
 {
-    "suggest": {
-        "autoTrigger": "always",
-        "enablePreview": true,
-        "minTriggerInputLength": 2
-    },
+    "coc.source.buffer.enable": false,
+    "coc.source.file.enable": false,
+    "coc.source.around.enable": false,
+
+    "coc.preferences.rootPatterns": [
+        "package.json",
+        "composer.json",
+        ".git"
+    ],
+
+    "tsserver.implicitProjectConfig.experimentalDecorators": true,
+
+    "eslint.quiet": true,
+    "eslint.packageManager": "yarn",
+    "eslint.filetypes": ["javascript", "typescript"],
+    "eslint.autoFix": true,
+
     "languageserver": {
         "kls": {
             "command": "kls",
