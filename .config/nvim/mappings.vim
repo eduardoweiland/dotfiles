@@ -22,3 +22,11 @@ vnoremap <silent><A-k> :m '<-2<CR>gv=gv
 
 " NERDTree
 noremap <silent><A-a> <Esc>:NERDTreeToggle<CR>
+
+" CocActions
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ga <Plug>(coc-codeaction)
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
