@@ -9,6 +9,9 @@ let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_splits = 0
 
+" Bufexplorer
+let g:bufExplorerShowRelativePath=1
+
 " NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1
