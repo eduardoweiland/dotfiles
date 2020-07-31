@@ -9,10 +9,6 @@ let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_splits = 0
 
-" Bufferline
-let g:bufferline_echo = 0
-let g:airline#extensions#bufferline#enabled = 1
-
 " NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1

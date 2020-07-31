@@ -20,10 +20,10 @@ call plug#begin()
 " UI
 Plug 'tomasiser/vim-code-dark'
 Plug 'vim-airline/vim-airline'
-Plug 'bling/vim-bufferline'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'gcmt/taboo.vim'
+Plug 'jlanzarotta/bufexplorer'
 
 " Tools
 Plug 'christoomey/vim-tmux-navigator'
