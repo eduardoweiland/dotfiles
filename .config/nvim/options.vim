@@ -12,6 +12,8 @@ set hidden            " Allow to hide a modified buffer
 set scrolloff=5       " Keep 5 lines between cursor and screen border
 set wildmenu          " Command completion mode
 set wildmode=longest,list,full
+set splitbelow
+set splitright
 
 " Default formatting options
 set expandtab
