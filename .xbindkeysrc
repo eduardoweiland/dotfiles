@@ -27,3 +27,13 @@
 
 "pactl set-sink-volume @DEFAULT_SINK@ -5%"
     Mod4 + Down
+
+"playerctl play-pause"
+    Mod4 + space
+
+"playerctl next"
+    Mod4 + Right
+
+"playerctl previous"
+    Mod4 + Left
+
