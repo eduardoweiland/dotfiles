@@ -18,7 +18,7 @@
     di = difftool
     tree = log --graph --pretty=oneline --abbrev-commit
     brlog = "for-each-ref --sort='-committerdate:iso8601' --format=' %(committerdate:iso8601)%09%1B[1;32m%(refname:short)%1B[m%09%09%(subject)' refs/heads"
-    authors = "shortlog -s -n --no-merges origin/master"
+    authors = shortlog -s -n --no-merges origin/master
 
 [push]
     default = simple
@@ -34,3 +34,5 @@
 
 [merge]
     renamelimit = 2000
+[pull]
+	ff = only
