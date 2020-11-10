@@ -8,3 +8,7 @@ configuration {
     icon-theme: "Flat-Remix-Green-Dark";
     theme: "android_notification";
 }
+
+element-icon {
+    size: 1.1em;
+}
