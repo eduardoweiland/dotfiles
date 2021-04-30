@@ -9,7 +9,7 @@ elif [ "$1" == "mute" ]; then
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 fi
 
-mixer_output=$(amixer sget -D pulse Master)
+mixer_output=$(amixer sget Master)
 
 volume=$(grep -Pom1 '\d+(?=%)' <<< $mixer_output)
 status=$(grep -Pom1 'off|on'   <<< $mixer_output)
