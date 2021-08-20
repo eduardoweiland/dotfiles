@@ -14,6 +14,9 @@ set wildmenu          " Command completion mode
 set wildmode=longest,list,full
 set splitbelow
 set splitright
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c      " Avoid showing extra messages when using completion
+set signcolumn=yes    " Always show diagnostics column
 
 " Default formatting options
 set expandtab

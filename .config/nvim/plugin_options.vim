@@ -10,7 +10,7 @@ let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#show_splits = 0
 
 " Bufexplorer
-let g:bufExplorerShowRelativePath=1
+let g:bufExplorerShowRelativePath = 1
 
 " NERDTree
 let NERDTreeMinimalUI = 1
@@ -26,3 +26,18 @@ augroup CloseNERDTree
     autocmd!
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup end
+
+" Enable completion plugin
+autocmd BufEnter * lua require'completion'.on_attach()
+
+" Configure LSP
+lua <<EOF
+local nvim_lsp = require'lspconfig'
+
+local on_lsp_attach = function(client)
+    require'completion'.on_attach(client)
+end
+
+nvim_lsp.rust_analyzer.setup({ on_attach=on_lsp_attach })
+
+EOF
