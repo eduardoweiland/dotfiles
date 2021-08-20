@@ -35,4 +35,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'rhysd/committia.vim'
 Plug 'chaoren/vim-wordmotion'
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+
 call plug#end()

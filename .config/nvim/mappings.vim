@@ -22,3 +22,9 @@ vnoremap <silent><A-k> :m '<-2<CR>gv=gv
 
 " NERDTree
 noremap <silent><A-a> <Esc>:NERDTreeToggle<CR>
+
+" TAB based completion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+imap <Tab>   <Plug>(completion_smart_tab)
+imap <S-Tab> <Plug>(completion_smart_s_tab)
