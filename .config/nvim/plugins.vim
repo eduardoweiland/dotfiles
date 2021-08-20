@@ -35,22 +35,4 @@ Plug 'tpope/vim-fugitive'
 Plug 'rhysd/committia.vim'
 Plug 'chaoren/vim-wordmotion'
 
-" Autocomplete
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
-" Languages
-Plug 'leafgarland/typescript-vim',    { 'for': 'typescript' }
-Plug 'joukevandermaas/vim-ember-hbs', { 'for': 'html.handlebars' }
-Plug 'Freedzone/kerbovim',            { 'for': 'kerboscript', 'do': 'dos2unix */*.vim' }
-
 call plug#end()
-
-let g:coc_global_extensions = [
-    \ 'coc-css',
-    \ 'coc-ember',
-    \ 'coc-eslint',
-    \ 'coc-html',
-    \ 'coc-json',
-    \ 'coc-tsserver',
-    \ 'coc-yaml'
-\ ]
