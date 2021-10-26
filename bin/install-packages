@@ -8,13 +8,6 @@ then
         https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 fi
 
-# Add YADM repo
-if [ ! -f /etc/yum.repos.d/home:TheLocehiliosan:yadm.repo ]
-then
-    dnf config-manager --add-repo \
-        https://download.opensuse.org/repositories/home:TheLocehiliosan:yadm/Fedora_$(rpm -E %fedora)/home:TheLocehiliosan:yadm.repo
-fi
-
 # Add VSCodium repo
 if [ ! -f /etc/yum.repos.d/vscodium.repo ]
 then
@@ -47,5 +40,4 @@ dnf install \
     tint2 \
     tmux \
     xbindkeys \
-    yadm \
     zsh
