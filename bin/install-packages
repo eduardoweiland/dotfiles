@@ -15,9 +15,31 @@ then
         https://download.opensuse.org/repositories/home:TheLocehiliosan:yadm/Fedora_$(rpm -E %fedora)/home:TheLocehiliosan:yadm.repo
 fi
 
+# Add VSCodium repo
+if [ ! -f /etc/yum.repos.d/vscodium.repo ]
+then
+    sudo cat > /etc/yum.repos.d/vscodium.repo << 'EOF'
+[vscodium]
+name=vscodium
+baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+metadata_expire=1h
+EOF
+fi
+
 dnf install \
+    codium \
+    cpu-x \
+    discord \
     flameshot \
+    flat-remix-icon-theme \
     git \
+    htop \
+    iotop \
+    jq \
     lsd \
     neovim \
     rofi \
