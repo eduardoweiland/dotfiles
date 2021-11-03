@@ -1,14 +1,12 @@
 configuration {
     modi: "drun,run,window";
-    width: 45;
-    lines: 25;
-    columns: 1;
-    font: "Source Sans Pro SemiBold 13";
+    font: "Source Sans 3 Semibold 14";
     show-icons: true;
     icon-theme: "Flat-Remix-Green-Dark";
-    theme: "android_notification";
 }
 
+@theme "android_notification"
+
 element-icon {
-    size: 1.1em;
+    size: 1em;
 }
