@@ -36,3 +36,5 @@
     renamelimit = 2000
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
