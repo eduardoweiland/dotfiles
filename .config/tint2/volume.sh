@@ -31,7 +31,24 @@ icon_path=$icon_dir/audio-volume-$icon-symbolic.svg
 echo $icon_path
 echo Volume: $volume% >&2
 
-# @TODO: discover a way to replace existing notification
-#if [ ! -z "$1" ]; then
-#    notify-send -t 2000 -i $icon_path -c device "Volume" "Volume is set to $volume%"
-#fi
+# Since notify-send can't replace notifications, let's go directly to the bus
+# https://askubuntu.com/questions/161851/how-do-i-use-notify-send-to-immediately-replace-an-existing-notification
+notify_send() {
+    summary="$1"
+    body="$2"
+    icon="$3"
+    replace="${4:-0}"
+
+    gdbus call --session \
+        --dest org.freedesktop.Notifications \
+        --object-path /org/freedesktop/Notifications \
+        --method org.freedesktop.Notifications.Notify \
+        -- "" "$replace" "$icon" "$summary" "$body" "[]" "[]" "int32 2000" \
+        | grep -oP ' \K\d+'
+}
+
+# Still has some race conditions, but it's better than with original notify-send
+if [ ! -z "$1" ]; then
+    nid="$(dirname $(readlink -f $0))/.notify_id"
+    notify_send "Volume" "Volume is set to $volume%" "$icon_path" $(<$nid) > $nid
+fi
