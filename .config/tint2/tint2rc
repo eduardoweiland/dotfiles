@@ -7,6 +7,19 @@ border_sides = R
 background_color = #303030 100
 border_color = #000000 100
 
+# Background 2: Tooltip
+rounded = 1
+border_width = 1
+background_color = #525252 100
+border_color = #525252 100
+
+#-------------------------------------
+# Tooltip style
+tooltip_padding = 10 10
+tooltip_show_timeout = 0.4
+tooltip_background_id = 2
+tooltip_font_color = #c4c4c4 100
+
 #-------------------------------------
 # Panel
 panel_items = LSEFCP
@@ -26,6 +39,7 @@ mouse_pressed_icon_asb = 100 0 0
 launcher_padding = 4 0 4
 launcher_background_id = 0
 launcher_icon_background_id = 0
+launcher_tooltip = 1
 launcher_icon_size = 24
 launcher_item_app = firefox.desktop
 launcher_item_app = chromium-browser.desktop
@@ -46,7 +60,6 @@ systray_icon_size = 24
 # Volume control
 execp = new
 execp_command = ~/.config/tint2/volume.sh
-execp_tooltip =
 execp_interval = 15
 execp_continuous = 0
 execp_has_icon = 1
