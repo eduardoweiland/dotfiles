@@ -29,6 +29,7 @@ fi
 icon_path=$icon_dir/audio-volume-$icon-symbolic.svg
 
 echo $icon_path
+echo Volume: $volume% >&2
 
 # @TODO: discover a way to replace existing notification
 #if [ ! -z "$1" ]; then
