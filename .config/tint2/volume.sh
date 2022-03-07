@@ -9,14 +9,12 @@ elif [ "$1" == "mute" ]; then
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 fi
 
-mixer_output=$(amixer sget Master)
-
-volume=$(grep -Pom1 '\d+(?=%)' <<< $mixer_output)
-status=$(grep -Pom1 'off|on'   <<< $mixer_output)
+volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
+muted=$(LANG=c pactl get-sink-mute @DEFAULT_SINK@ | grep -Po 'yes|no')
 
 icon_dir=/usr/share/icons/Flat-Remix-Blue-Dark/status/symbolic
 
-if [ "$status" == "off" ]; then
+if [ "$muted" == "yes" ]; then
     icon=muted
 elif [ $volume -gt 0 ] && [ $volume -lt 34 ]; then
     icon=low
