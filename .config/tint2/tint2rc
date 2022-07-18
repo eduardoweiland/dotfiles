@@ -46,7 +46,7 @@ launcher_item_app = chromium-browser.desktop
 launcher_item_app = xfce4-terminal.desktop
 launcher_item_app = meld.desktop
 launcher_item_app = codium.desktop
-launcher_item_app = netbeans.desktop
+launcher_item_app = org.apache.netbeans.desktop
 launcher_item_app = homebank.desktop
 
 #-------------------------------------
