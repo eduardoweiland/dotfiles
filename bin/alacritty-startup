@@ -2,7 +2,7 @@
 
 if which xdotool &> /dev/null
 then
-    terminal_count=$(xdotool search --onlyvisible --class xfce4-terminal | wc -l)
+    terminal_count=$(xdotool search --onlyvisible --class Alacritty | wc -l)
     if [ $terminal_count -gt 1 ]
     then
         exit 0
