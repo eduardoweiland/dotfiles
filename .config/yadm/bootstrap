@@ -32,9 +32,15 @@ then
 fi
 
 # Nerd Fonts
-mkdir -p ~/.fonts
-cd ~/.fonts
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+
 base_url=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DejaVuSansMono
 curl -sSfLo 'DejaVuSansMono-Nerd-Font-Mono.ttf' $base_url/Regular/complete/DejaVu%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.ttf
 curl -sSfLo 'DejaVuSansMono-Bold-Nerd-Font-Mono.ttf' $base_url/Bold/complete/DejaVu%20Sans%20Mono%20Bold%20Nerd%20Font%20Complete%20Mono.ttf
+
+base_url=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack
+curl -sSfLo 'Hack-Regular-Nerd-Font-Mono.ttf' $base_url/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
+curl -sSfLo 'Hack-Bold-Nerd-Font-Mono.ttf' $base_url/Bold/complete/Hack%20Bold%20Nerd%20Font%20Complete%20Mono.ttf
+
 cd -
