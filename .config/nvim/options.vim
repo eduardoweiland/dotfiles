@@ -1,7 +1,7 @@
 colorscheme codedark
 syntax on
 
-set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 9
+set guifont=Hack\ Nerd\ Font\ Mono\ 9
 
 set mouse=a           " Enable mouse in all modes
 set number            " Show line numbers
