@@ -125,6 +125,18 @@ require('packer').startup({
       after = 'mason-lspconfig.nvim',
       config = function()
         local on_attach = function(client, bufnr)
+          local mapopts = { noremap = true, silent = true, buffer = bufnr }
+          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, mapopts)
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, mapopts)
+          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, mapopts)
+          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, mapopts)
+          vim.keymap.set('n', 'K',  '<cmd>Lspsaga hover_doc<cr>', mapopts)
+          vim.keymap.set('n', 'go', '<cmd>Lspsaga show_line_diagnostics<cr>', mapopts)
+          vim.keymap.set('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', mapopts)
+          vim.keymap.set('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', mapopts)
+          vim.keymap.set('n', '<leader>rn', '<cmd>Lspsaga rename<cr>', mapopts)
+          vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<cr>', mapopts)
+          vim.keymap.set('x', '<leader>ca', ':<c-u>Lspsaga range_code_action<cr>', mapopts)
         end
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
         for _, ls in pairs({ 'phpactor', 'volar' }) do
@@ -164,6 +176,13 @@ require('packer').startup({
     use({
       'ray-x/lsp_signature.nvim',
       config = function() require('lsp_signature').setup() end,
+    })
+
+    -- UI for LSP actions
+    use({
+      'kkharji/lspsaga.nvim',
+      cmd = 'Lspsaga',
+      config = function() require('lspsaga').setup() end,
     })
 
     if packer_bootstrap then
