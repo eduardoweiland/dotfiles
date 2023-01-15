@@ -17,12 +17,16 @@ map('n', '<A-Up>', ':call ResizeUp(1)<CR><Esc>', { silent = true, noremap = true
 map('n', '<A-Down>', ':call ResizeDown(1)<CR><Esc>', { silent = true, noremap = true })
 
 -- Make [xdsc] use black hole register (do not yank)
-for _, key in pairs({ 'x', 'X', 'd', 'dd', 'D', 'c', 'cc', 'C', 's', 'S' }) do
+for _, key in pairs({ 'x', 'X', 'd', 'D', 'c', 'C', 's', 'S' }) do
   map('n', key, '"_' .. key, { noremap = true })
   map('v', key, '"_' .. key, { noremap = true })
 end
+map('n', 'dd', '"_dd', { noremap = true })
+map('n', 'cc', '"_cc', { noremap = true })
+
 -- And <leader>d to yank to clipboard
-for _, key in pairs({ 'd', 'dd', 'D' }) do
+for _, key in pairs({ 'd', 'D' }) do
   map('n', '<leader>' .. key, '"+' .. key, { noremap = true })
   map('v', '<leader>' .. key, '"+' .. key, { noremap = true })
 end
+map('n', '<leader>dd', '"+dd', { noremap = true })
