@@ -110,8 +110,61 @@ require('packer').startup({
     -- Word motions
     use({ 'chaoren/vim-wordmotion' })
 
-    -- LSP (TODO complete config)
-    use({ 'neovim/nvim-lspconfig' })
+    -- LSP
+    use({
+      'williamboman/mason.nvim',
+      config = function() require('mason').setup() end,
+    })
+    use({
+      'williamboman/mason-lspconfig.nvim',
+      after = 'mason.nvim',
+      config = function() require('mason-lspconfig').setup() end,
+    })
+    use({
+      'neovim/nvim-lspconfig',
+      after = 'mason-lspconfig.nvim',
+      config = function()
+        local on_attach = function(client, bufnr)
+        end
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        for _, ls in pairs({ 'phpactor', 'volar' }) do
+          require('lspconfig')[ls].setup({ on_attach = on_attach, capabilities = capabilities })
+        end
+      end,
+    })
+
+    -- Autocompletion
+    use({
+      'hrsh7th/nvim-cmp',
+      config = function()
+        local cmp = require('cmp')
+        cmp.setup({
+          sources = cmp.config.sources({
+            { name = 'nvim_lsp' },
+          }),
+          mapping = {
+            ['<C-Space>'] = cmp.mapping.complete(),
+            ['<C-n>'] = cmp.mapping.select_next_item(),
+            ['<C-p>'] = cmp.mapping.select_prev_item(),
+            ['<Tab>'] = cmp.mapping.select_next_item(),
+            ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+            ['<CR>'] = cmp.mapping.confirm({ select = true }),
+          },
+          experimental = {
+            ghost_text = true,
+          },
+        })
+      end,
+    })
+
+    -- Provide completions from Language Server
+    use({ 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' })
+
+    -- Show function signatures
+    use({
+      'ray-x/lsp_signature.nvim',
+      config = function() require('lsp_signature').setup() end,
+    })
 
     if packer_bootstrap then
       require('packer').sync()
