@@ -11,7 +11,7 @@ set.hidden       = true           -- Allow to hide a modified buffer
 set.scrolloff    = 5              -- Keep 5 lines between cursor and screen border
 set.shortmess    = 'aoOstTcF'     -- Avoid showing extra messages
 set.inccommand   = 'split'        -- Preview substitute results in split panel
---set.clipboard    = 'unnamedplus'  -- Enable integration with system clipboard
+set.clipboard    = 'unnamedplus'  -- Enable integration with system clipboard
 
 -- Completion options
 set.pumheight   = 10         -- Maximum number of suggestions shown
