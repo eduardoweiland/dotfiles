@@ -30,3 +30,7 @@ for _, key in pairs({ 'd', 'D' }) do
   map('v', '<leader>' .. key, '"+' .. key, { noremap = true })
 end
 map('n', '<leader>dd', '"+dd', { noremap = true })
+
+-- Toggle NvimTree
+map('n', '<leader>b', ':NvimTreeToggle<CR>', { silent = true })
+map('v', '<leader>b', ':NvimTreeToggle<CR>', { silent = true })
