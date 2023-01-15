@@ -81,6 +81,9 @@ require('packer').startup({
     -- Easy navigation between tmux and nvim
     use({ 'christoomey/vim-tmux-navigator' })
 
+    -- Resize Neovim splits
+    use({ 'artart222/vim-resize' })
+
     -- Git integration
     use({
       'tpope/vim-fugitive',
