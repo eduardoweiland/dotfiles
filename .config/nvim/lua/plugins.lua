@@ -129,7 +129,7 @@ require('packer').startup({
           vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, mapopts)
           vim.keymap.set('n', 'gd', vim.lsp.buf.definition, mapopts)
           vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, mapopts)
-          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, mapopts)
+          vim.keymap.set('n', '<C-p>', vim.lsp.buf.signature_help, mapopts)
           vim.keymap.set('n', 'K',  '<cmd>Lspsaga hover_doc<cr>', mapopts)
           vim.keymap.set('n', 'go', '<cmd>Lspsaga show_line_diagnostics<cr>', mapopts)
           vim.keymap.set('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', mapopts)
