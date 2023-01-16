@@ -75,14 +75,29 @@ require('packer').startup({
       'nvim-lualine/lualine.nvim',
       event = { 'BufRead', 'BufNewFile' },
       requires = { 'nvim-tree/nvim-web-devicons' },
-      config = function() require('lualine').setup() end,
+      config = function()
+        require('lualine').setup({
+          extensions = { 'nvim-tree' },
+        })
+      end,
     })
 
     -- File explorer tree.
     use({
       'nvim-tree/nvim-tree.lua',
       requires = { 'nvim-tree/nvim-web-devicons' },
-      config = function() require('nvim-tree').setup() end,
+      config = function()
+        require('nvim-tree').setup({
+          renderer = {
+            indent_markers = {
+              enable = true,
+            },
+          },
+          view = {
+            hide_root_folder = true,
+          },
+        })
+      end,
     })
 
     -- Easy navigation between tmux and nvim
