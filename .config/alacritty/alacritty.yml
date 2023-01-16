@@ -3,7 +3,7 @@ window:
   startup_mode: Maximized
 
 font:
-  size: 9
+  size: 8
   normal:
     family: Hack Nerd Font Mono
 
