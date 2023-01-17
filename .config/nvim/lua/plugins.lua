@@ -100,10 +100,36 @@ require('packer').startup({
             },
           },
           view = {
+            width = 40,
             hide_root_folder = true,
           },
         })
       end,
+    })
+
+    -- Bufferline
+    use({
+      'akinsho/bufferline.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons' },
+      config = function()
+        require('bufferline').setup({
+          options = {
+            diagnostics = 'nvim_lsp',
+            numbers = function(opts) return opts.raise(opts.id) end,
+            show_close_icon = false,
+            separator_style = 'slant',
+            offsets = {
+              {
+                filetype = 'NvimTree',
+                text = 'Explorer',
+                text_align = 'center',
+                highlight = 'Directory',
+                separator = true,
+              },
+            },
+          },
+        })
+      end
     })
 
     -- Easy navigation between tmux and nvim
