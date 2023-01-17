@@ -48,6 +48,12 @@ require('packer').startup({
       config = function()
         require('nvim-treesitter.configs').setup({
           ensure_installed = { 'css', 'javascript', 'lua', 'php', 'rust', 'terraform', 'typescript', 'vue' },
+          highlight = {
+            enable = true,
+          },
+          indent = {
+            enable = true,
+          },
         })
       end,
     })
