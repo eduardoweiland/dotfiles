@@ -94,6 +94,7 @@ require('packer').startup({
       requires = { 'nvim-tree/nvim-web-devicons' },
       config = function()
         require('nvim-tree').setup({
+          sync_root_with_cwd = true,
           renderer = {
             indent_markers = {
               enable = true,
@@ -131,6 +132,9 @@ require('packer').startup({
         })
       end
     })
+
+    -- Don't mess with window layout when closing buffers
+    use({ 'famiu/bufdelete.nvim' })
 
     -- Easy navigation between tmux and nvim
     use({ 'christoomey/vim-tmux-navigator' })
