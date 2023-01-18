@@ -34,3 +34,8 @@ map('n', '<leader>dd', '"+dd', { noremap = true })
 -- Toggle NvimTree
 map('n', '<leader>b', ':NvimTreeToggle<CR>', { silent = true })
 map('v', '<leader>b', ':NvimTreeToggle<CR>', { silent = true })
+
+-- Switching/closing buffers
+map('n', 'bd', ':Bdelete<CR>', { silent = true, noremap = true })
+map('n', 'bn', ':bnext<CR>', { silent = true, noremap = true })
+map('n', 'bp', ':bprevious<CR>', { silent = true, noremap = true })
