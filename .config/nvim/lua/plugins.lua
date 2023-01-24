@@ -133,6 +133,12 @@ require('packer').startup({
       end
     })
 
+    -- Scope buffers to tabs
+    use({
+      'tiagovla/scope.nvim',
+      config = function() require("scope").setup() end,
+    });
+
     -- Don't mess with window layout when closing buffers
     use({ 'famiu/bufdelete.nvim' })
 
@@ -234,6 +240,12 @@ require('packer').startup({
       'kkharji/lspsaga.nvim',
       cmd = 'Lspsaga',
       config = function() require('lspsaga').setup() end,
+    })
+
+    -- Highlight word under cursor
+    use({
+      'RRethy/vim-illuminate',
+      event = { 'BufRead', 'BufNewFile' },
     })
 
     if packer_bootstrap then
