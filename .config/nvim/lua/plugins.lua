@@ -104,6 +104,9 @@ require('packer').startup({
             width = 40,
             hide_root_folder = true,
           },
+          update_focused_file = {
+            enable = true,
+          },
         })
       end,
     })
