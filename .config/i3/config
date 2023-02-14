@@ -1,0 +1,171 @@
+# i3 config file (v4)
+# vi: ft=i3config
+
+######################
+## GENERAL SETTINGS ##
+######################
+
+set $mod Mod4
+set $alt Mod1
+
+font pango:Hack 8
+floating_modifier $mod
+tiling_drag modifier
+default_border pixel 3
+default_floating_border pixel 3
+focus_follows_mouse no
+
+############
+## I3 BAR ##
+############
+
+bar {
+    status_command exec ~/.config/i3/status.sh
+
+    colors {
+        background #1a1a1a
+        statusline #9a9a9a
+    }
+}
+
+################
+## WORKSPACES ##
+################
+
+set $ws1 "1 web"
+set $ws2 "2 term"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10 steam"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $alt+Tab workspace back_and_forth
+
+bindsym $mod+Shift+1 move container to workspace $ws1 ; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2 ; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3 ; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4 ; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5 ; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6 ; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7 ; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8 ; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9 ; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10 ; workspace $ws10
+
+#################
+## ASSIGNMENTS ##
+#################
+
+assign [class="^Firefox$"] → $ws1
+assign [class="^Alacritty$"] → $ws2
+
+# does not seem to work correctly...
+for_window [class="^Steam$"] \
+    resize set 100 ppt 100 ppt, \
+    move position 0 0, \
+    floating enable, \
+    move container to workspace $ws10, \
+    focus
+
+##################
+## KEY BINDINGS ##
+##################
+
+# Volume control
+bindsym $mod+Up   exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $mod+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# Media player controls
+bindsym $mod+space exec --no-startup-id playerctl play-pause
+bindsym $mod+Right exec --no-startup-id playerctl next
+bindsym $mod+Left  exec --no-startup-id playerctl previous
+
+# Start rofi (a program launcher)
+bindsym $mod+Return exec --no-startup-id rofi -show drun
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in vertical orientation
+bindsym $mod+v split h
+
+# split in horizontal orientation
+bindsym $mod+s split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle split direction
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+m focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# logout
+bindsym $mod+Shift+e exit
+
+# lock session
+bindsym $mod+Shift+BackSpace exec --no-startup-id loginctl lock-session
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+###############
+## AUTOSTART ##
+###############
+
+exec --no-startup-id dex-autostart --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+exec --no-startup-id firefox
+exec --no-startup-id alacritty
