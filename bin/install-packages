@@ -27,6 +27,7 @@ dnf install \
     codium \
     cpu-x \
     discord \
+    feh \
     flameshot \
     flat-remix-icon-theme \
     git \
