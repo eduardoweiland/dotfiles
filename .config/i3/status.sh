@@ -9,7 +9,8 @@ do
     player=$(playerctl metadata -f '🎜 {{status}} {{title}} - {{artist}}')
 
     cpu_usage=$(S_COLORS=never mpstat --dec=0 -u | tail -n 1 | awk '{ print 100 - $12 "%" }')
-    cpu_temp=$(awk '{ print $1 / 1000 "°C" }' /sys/class/thermal/thermal_zone2/temp)
+    #cpu_temp=$(awk '{ print $1 / 1000 "°C" }' /sys/class/thermal/thermal_zone2/temp)
+    cpu_temp=$(sensors | grep -Pio 'package[^+]*\+\K\S*')
 
     gpu='no data'
     if [ $has_nvidia ]
