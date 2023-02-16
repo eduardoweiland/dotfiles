@@ -170,3 +170,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -e -c 000
 exec --no-startup-id nm-applet
 exec --no-startup-id firefox
 exec --no-startup-id alacritty
+
+##################
+## LOCAL CONFIG ##
+##################
+
+include config.local
