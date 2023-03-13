@@ -205,12 +205,21 @@ require('packer').startup({
       end,
     })
 
+    -- Snippets
+    use({ 'L3MON4D3/LuaSnip' })
+
     -- Autocompletion
     use({
       'hrsh7th/nvim-cmp',
+      after = 'LuaSnip',
       config = function()
         local cmp = require('cmp')
         cmp.setup({
+          snippet = {
+            expand = function(args)
+              require('luasnip').lsp_expand(args.body)
+            end,
+          },
           sources = cmp.config.sources({
             { name = 'nvim_lsp' },
           }),
