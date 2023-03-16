@@ -101,6 +101,9 @@ bindsym XF86AudioPrev  exec --no-startup-id playerctl previous
 # Start rofi (a program launcher)
 bindsym $mod+Return exec --no-startup-id rofi -show drun
 
+# Use Flameshot for screenshots
+bindsym Print exec --no-startup-id flameshot gui
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
