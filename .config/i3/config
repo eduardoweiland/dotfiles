@@ -174,6 +174,7 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id feh --bg-scale $HOME/.local/share/backgrounds/linux-rocks.png
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -e -c 000000
+exec --no-startup-id dbus-update-activation-environment --all
 exec --no-startup-id nm-applet
 exec --no-startup-id firefox
 exec --no-startup-id alacritty
