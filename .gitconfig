@@ -18,7 +18,7 @@
     di = difftool
     tree = log --graph --pretty=oneline --abbrev-commit
     brlog = "!git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)%(color:reset)' --color=always | column -ts'|'"
-    authors = shortlog -s -n --no-merges origin/master
+    authors = shortlog -s -n
 
 [push]
     default = simple
