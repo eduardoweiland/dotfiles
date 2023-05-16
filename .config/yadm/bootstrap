@@ -43,4 +43,8 @@ base_url=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack
 curl -sSfLo 'Hack-Regular-Nerd-Font-Mono.ttf' $base_url/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
 curl -sSfLo 'Hack-Bold-Nerd-Font-Mono.ttf' $base_url/Bold/complete/Hack%20Bold%20Nerd%20Font%20Complete%20Mono.ttf
 
+curl -sSfLo fontawesome.zip https://use.fontawesome.com/releases/v6.4.0/fontawesome-free-6.4.0-desktop.zip
+unzip -oj fontawesome.zip 'fontawesome-free-6.4.0-desktop/otfs/*' -d .
+rm fontawesome.zip
+
 cd -
