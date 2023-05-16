@@ -1,7 +1,7 @@
 local set = vim.opt
 
 -- General options
-set.guifont      = 'Hack Nerd Font Mono 9'
+set.guifont      = 'Hack Nerd Font 9'
 set.fileencoding = 'utf-8'        -- Default file encoding
 set.mouse        = 'a'            -- Enable mouse in all modes
 set.number       = true           -- Show line numbers
