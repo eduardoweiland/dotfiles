@@ -39,3 +39,10 @@ map('v', '<leader>b', ':NvimTreeToggle<CR>', { silent = true })
 map('n', '<leader>x', ':Bdelete<CR>', { silent = true, noremap = true })
 map('n', '<leader>n', ':bnext<CR>', { silent = true, noremap = true })
 map('n', '<leader>p', ':bprevious<CR>', { silent = true, noremap = true })
+
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
