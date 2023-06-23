@@ -207,7 +207,8 @@ require('packer').startup({
           vim.keymap.set('x', '<leader>ca', ':<c-u>Lspsaga range_code_action<cr>', mapopts)
         end
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        for _, ls in pairs({ 'phpactor', 'volar', 'tsserver' }) do
+
+        for _, ls in pairs({ 'cssls', 'ember', 'eslint', 'phpactor', 'rust_analyzer', 'terraformls', 'tsserver', 'volar' }) do
           require('lspconfig')[ls].setup({ on_attach = on_attach, capabilities = capabilities })
         end
       end,
