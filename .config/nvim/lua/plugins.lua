@@ -88,6 +88,14 @@ require('packer').startup({
       end,
     })
 
+    -- Telescope
+    use({
+      'nvim-telescope/telescope.nvim',
+      requires = { 'nvim-lua/plenary.nvim' },
+      config = function()
+      end,
+    })
+
     -- File explorer tree.
     use({
       'nvim-tree/nvim-tree.lua',
