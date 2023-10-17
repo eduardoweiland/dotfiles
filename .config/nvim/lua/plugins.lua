@@ -258,9 +258,17 @@ require('packer').startup({
 
     -- UI for LSP actions
     use({
-      'kkharji/lspsaga.nvim',
-      cmd = 'Lspsaga',
-      config = function() require('lspsaga').setup() end,
+      'nvimdev/lspsaga.nvim',
+      config = function()
+        require('lspsaga').setup({
+          lightbulb = {
+            virtual_text = false,
+          },
+          symbol_in_winbar = {
+            enable = false,
+          },
+        })
+      end,
     })
 
     -- Highlight word under cursor
