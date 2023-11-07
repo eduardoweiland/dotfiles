@@ -25,22 +25,29 @@ fi
 
 dnf install \
     codium \
-    cpu-x \
     discord \
-    feh \
     flameshot \
     flat-remix-icon-theme \
+    fuzzel \
     git \
+    gnome-keyring \
+    greetd \
     htop \
     iotop \
     jq \
+    mako \
     neovim \
+    NetworkManager-openvpn \
+    nm-connection-editor \
     playerctl \
     pulseaudio-utils \
-    rofi \
-    rofi-themes \
-    simplescreenrecorder \
-    tint2 \
+    river \
+    swaybg \
+    swaylock \
     tmux \
-    xbindkeys \
+    xdg-desktop-portal-gnome \
+    xdg-desktop-portal-gtk \
+    xdg-desktop-portal-wlr \
+    xss-lock \
+    yambar \
     zsh
