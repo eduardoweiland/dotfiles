@@ -1,0 +1,20 @@
+sort=+time
+max-visible=15
+default-timeout=10000
+
+# text
+font=Hack 12
+
+# lengths
+width=420
+height=800
+outer-margin=16
+margin=8
+padding=8,12
+border-size=4
+border-radius=0
+
+# colors
+background-color=#333333dd
+text-color=#ffffffff
+border-color=#00aaffff
