@@ -1,0 +1,4 @@
+[Default]
+show_panel=true
+early_exit=true
+paint_mode=arrow
