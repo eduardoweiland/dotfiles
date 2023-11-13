@@ -26,12 +26,12 @@ fi
 dnf install \
     codium \
     discord \
-    flameshot \
     flat-remix-icon-theme \
     fuzzel \
     git \
     gnome-keyring \
     greetd \
+    grim \
     htop \
     iotop \
     jq \
@@ -42,6 +42,8 @@ dnf install \
     playerctl \
     pulseaudio-utils \
     river \
+    slurp \
+    swappy \
     swaybg \
     swaylock \
     tmux \
