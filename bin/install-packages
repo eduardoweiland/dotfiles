@@ -18,6 +18,7 @@ pkgs=(
     iotop
     jq
     neovim
+    nextcloud-client
     NetworkManager-openvpn
     playerctl
     pulseaudio-utils
