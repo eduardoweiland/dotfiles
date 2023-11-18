@@ -39,4 +39,4 @@
 [init]
     defaultBranch = main
 [advice]
-	skippedCherryPicks = false
+    skippedCherryPicks = false
