@@ -31,6 +31,7 @@ dnf install \
     swaybg \
     swaylock \
     tmux \
+    tree-sitter-cli \
     xdg-desktop-portal-gnome \
     xdg-desktop-portal-gtk \
     xdg-desktop-portal-wlr \
