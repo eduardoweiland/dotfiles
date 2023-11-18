@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$ZSH-custom"
 
 # Prompt theme
 ZSH_THEME="oxide"
