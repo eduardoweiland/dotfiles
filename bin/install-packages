@@ -60,7 +60,11 @@ then
 elif [ "$1" == "home" ]
 then
     pkgs+=(
+        goverlay
+        homebank
         podman
+        mangohud
+        steam
     )
 fi
 
