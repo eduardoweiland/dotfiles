@@ -18,7 +18,8 @@ HIST_STAMPS="%d/%m/%Y %T"
 # Plugins to load
 # Standard plugins can be found in $ZSH/plugins/*
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git docker docker-compose yadm)
+plugins=(git docker docker-compose)
+fpath=(/usr/share/doc/yadm/completion/zsh $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
