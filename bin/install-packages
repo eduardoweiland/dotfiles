@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
 # Add RPM Fusion repo
 if [ ! -f /etc/yum.repos.d/rpmfusion-free.repo ]
@@ -8,33 +8,45 @@ then
         https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 fi
 
-dnf install \
-    discord \
-    flat-remix-icon-theme \
-    fuzzel \
-    git \
-    gnome-keyring \
-    greetd \
-    grim \
-    htop \
-    iotop \
-    jq \
-    mako \
-    neovim \
-    NetworkManager-openvpn \
-    nm-connection-editor \
-    playerctl \
-    pulseaudio-utils \
-    river \
-    slurp \
-    swappy \
-    swaybg \
-    swaylock \
-    tmux \
-    tree-sitter-cli \
-    xdg-desktop-portal-gnome \
-    xdg-desktop-portal-gtk \
-    xdg-desktop-portal-wlr \
-    xss-lock \
-    yambar \
+# Set up flathub
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+pkgs=(
+    flat-remix-icon-theme
+    git
+    htop
+    iotop
+    jq
+    neovim
+    NetworkManager-openvpn
+    playerctl
+    pulseaudio-utils
+    tmux
+    tree-sitter-cli
     zsh
+)
+
+if [ "$1" == "work" ]
+then
+    pkgs+=(
+        fuzzel
+        gnome-keyring
+        greetd
+        grim
+        mako
+        nm-connection-editor
+        river
+        slurp
+        swappy
+        swaybg
+        swaylock
+        xdg-desktop-portal-gnome
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
+        xss-lock
+        yambar
+    )
+fi
+
+dnf install "${pkgs[@]}"
+flatpak install flathub com.discordapp.Discord
