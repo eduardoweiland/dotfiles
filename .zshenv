@@ -1,5 +1,5 @@
 export LANG="pt_BR.UTF-8"
-export EDITOR="vi"
+export EDITOR="nvim"
 export COMPOSE_HTTP_TIMEOUT=240
 export DOCKER_CLIENT_TIMEOUT=240
 export COMPOSER_MEMORY_LIMIT=4G
