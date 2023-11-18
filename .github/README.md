@@ -8,7 +8,8 @@ My dotfiles. Managed by [yadm](https://yadm.io/).
 
 ## Setup
 
-- [Install yadm](https://yadm.io/docs/install)
+- `sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:TheLocehiliosan:yadm/Fedora_Rawhide/home:TheLocehiliosan:yadm.repo`
+- `sudo dnf install -y yadm`
 - `yadm clone git@github.com:eduardoweiland/dotfiles.git`
 - `sudo bin/install-packages`
 - `yadm bootstrap`
