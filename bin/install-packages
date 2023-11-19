@@ -27,6 +27,7 @@ pkgs=(
     NetworkManager-openvpn
     playerctl
     pulseaudio-utils
+    ripgrep
     tmux
     tree-sitter-cli
     zsh
