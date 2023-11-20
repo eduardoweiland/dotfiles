@@ -69,4 +69,8 @@ then
 fi
 
 dnf install "${pkgs[@]}"
-flatpak install flathub com.discordapp.Discord
+
+if [ "$1" == "home" ]
+then
+    flatpak install flathub com.discordapp.Discord
+fi
