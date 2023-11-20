@@ -26,3 +26,4 @@ source $ZSH/oh-my-zsh.sh
 alias ll='ls -lh'
 alias grep='grep --color=auto'
 alias ap='ansible-playbook'
+alias gca='git commit --amend --no-edit'
