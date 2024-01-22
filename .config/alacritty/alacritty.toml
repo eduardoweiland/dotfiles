@@ -1,0 +1,45 @@
+[window]
+startup_mode = "Maximized"
+
+[font]
+size = 9
+
+[font.normal]
+family = "Hack Nerd Font"
+
+[shell]
+program = "/home/eduardo/bin/alacritty-startup"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "NumpadEnter"
+
+[mouse]
+hide_when_typing = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+background = "#1e1e1e"
+foreground = "#dcdcdc"
+
+[colors.normal]
+black = "#3f3f3f"
+blue = "#9ab8d7"
+cyan = "#8cd0d3"
+green = "#60b48a"
+magenta = "#dc8cc3"
+red = "#705050"
+white = "#dcdcdc"
+yellow = "#dfaf8f"
+
+[colors.bright]
+black = "#709080"
+blue = "#94bff3"
+cyan = "#93e0e3"
+green = "#72d5a3"
+magenta = "#ec93d3"
+red = "#dca3a3"
+white = "#ffffff"
+yellow = "#f0dfaf"
