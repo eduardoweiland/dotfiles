@@ -1,5 +1,3 @@
-vim.g.mapleader = '\\'
-
 local map = vim.api.nvim_set_keymap
 
 -- Move lines up and down (Alt+j Alt+k)
