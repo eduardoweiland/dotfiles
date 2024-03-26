@@ -1,3 +1,5 @@
+vim.g.mapleader = '\\'
+
 local set = vim.opt
 
 -- General options
