@@ -12,5 +12,6 @@ return {
         'php', 'rust', 'terraform', 'toml', 'typescript', 'vue', 'xml', 'yaml',
       },
     },
+    main = 'nvim-treesitter.configs',
   },
 }

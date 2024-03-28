@@ -2,7 +2,7 @@ return {
   {
     'akinsho/bufferline.nvim',
     event = { 'VeryLazy' },
-    requires = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       options = {
         diagnostics = 'nvim_lsp',
