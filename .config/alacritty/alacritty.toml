@@ -1,6 +1,3 @@
-[window]
-startup_mode = "Maximized"
-
 [font]
 size = 9
 
@@ -8,7 +5,8 @@ size = 9
 family = "Hack Nerd Font"
 
 [shell]
-program = "/home/eduardo/bin/alacritty-startup"
+program = "/usr/bin/tmux"
+args = ["new", "-A"]
 
 [[keyboard.bindings]]
 action = "ReceiveChar"
