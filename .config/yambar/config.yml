@@ -1,0 +1,185 @@
+icon: &icon "Font Awesome 6 Free:style=solid:size=16"
+
+bar:
+  location: bottom
+  height: 32
+  spacing: 14
+  margin: 20
+  background: 000000dd
+  foreground: 00aaffff
+  font: Pescante:size=20
+
+  left:
+    - river:
+        title:
+          string: { text: "{mode}" }
+        content:
+          empty: {}
+
+    - river:
+        anchors:
+          - base: &river_base
+              left-margin: 12
+              right-margin: 12
+              text: "{id}"
+              foreground: 00aaffff
+
+        content:
+          map:
+            on-click:
+              left: sh -c "riverctl set-focused-tags $((1 << ({id} - 1)))"
+              right: sh -c "riverctl toggle-focused-tags $((1 << ({id} -1)))"
+              middle: sh -c "riverctl toggle-view-tags $((1 << ({id} -1)))"
+            conditions:
+              urgent:
+                string:
+                  <<: *river_base
+                  deco: { background: { color: d08770ff } }
+                  foreground: ffffffff
+              focused:
+                string:
+                  <<: *river_base
+                  deco: { background: { color: 00aaff88 } }
+                  foreground: ffffffff
+              visible && ~occupied:
+                string:
+                  <<: *river_base
+              visible && occupied:
+                string:
+                  <<: *river_base
+              ~focused && occupied:
+                string:
+                  <<: *river_base
+              ~visible && ~occupied: { empty: {} }
+              ~visible && occupied:
+                string:
+                  <<: *river_base
+
+    - foreign-toplevel:
+        content:
+          list:
+            spacing: 3
+            items:
+              - map:
+                  conditions:
+                    ~activated: { empty: {} }
+                    app-id == "firefox": { string: { text: "", font: *icon } }
+                    app-id == "Alacritty": { string: { text: "", font: *icon } }
+              - map:
+                  conditions:
+                    activated: { string: { text: "{app-id}: {title}" } }
+
+  center:
+    - script:
+        path: /usr/bin/playerctl
+        args:
+          - "--follow"
+          - "metadata"
+          - "-f"
+          - |
+            status|string|{{status}}
+            artist|string|{{artist}}
+            title|string|{{title}}
+        content:
+          map:
+            conditions:
+              artist == "Beyond The Black":
+                list:
+                  spacing: 6
+                  items:
+                    - string: { text: "", font: *icon }
+                    - string: { text: "{artist}", font: "VTKS Sabonete:size=28" }
+                    - string: { text: "{title}", font: "Road Rage:size=36" }
+                    - string: { text: "", font: *icon }
+              status == "Playing":
+                list:
+                  spacing: 6
+                  items:
+                    - string: { text: "", font: *icon }
+                    - string: { text: "{artist}", font: "Grouns:size=22" }
+                    - string: { text: "{title}", font: "Road Rage:size=36" }
+                    - string: { text: "", font: *icon }
+
+  right:
+    - network:
+        name: enp2s0
+        content:
+          list:
+            spacing: 3
+            on-click: nm-connection-editor
+            items:
+              - string: { text: "", font: *icon }
+              - string: { text: "{ipv4}" }
+
+    - network:
+        name: tun0
+        content:
+          list:
+            spacing: 3
+            on-click: nm-connection-editor
+            items:
+              - string: { text: "", font: *icon }
+              - string: { text: "{ipv4}" }
+
+    - script:
+        path: ~/.config/yambar/sensors.sh
+        poll-interval: "2000"
+        content:
+          list:
+            spacing: 3
+            items:
+              - string: { text: "", font: *icon }
+              - string: { text: "{temp1_input}°C" }
+
+    - cpu:
+        poll-interval: "2000"
+        content:
+          map:
+            conditions:
+              id == -1:
+                list:
+                  spacing: 3
+                  items:
+                    - string: { text: "", font: *icon }
+                    - string: { text: "{cpu}%" }
+
+    - mem:
+        poll-interval: "2000"
+        content:
+          list:
+            spacing: 3
+            items:
+              - string: { text: "", font: *icon }
+              - string: { text: "{used:mib} MiB {percent_used}%" }
+
+    - pipewire:
+        content:
+          list:
+            spacing: 3
+            on-click: pavucontrol
+            items:
+              - map:
+                  conditions:
+                    type == "sink" && ~muted:
+                      - ramp:
+                          tag: cubic_volume
+                          items:
+                            - string: { text: "", font: *icon }
+                            - string: { text: "", font: *icon }
+                            - string: { text: "", font: *icon }
+              - map:
+                  conditions:
+                    type == "sink" && muted: { string: { text: "", font: *icon } }
+                    type == "sink" && ~muted: { string: { text: "{cubic_volume}%" } }
+
+    - clock:
+        time-format: "%H:%M"
+        date-format: "%a, %d %b"
+        content:
+          list:
+            spacing: 3
+            items:
+              - string: { text: "", font: *icon }
+              - string: { text: "{date}" }
+              - string: { text: "", font: *icon }
+              - string: { text: "{time}" }
