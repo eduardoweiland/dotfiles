@@ -46,4 +46,20 @@ curl -sSfLo fontawesome.zip https://use.fontawesome.com/releases/v6.4.0/fontawes
 unzip -oj fontawesome.zip 'fontawesome-free-6.4.0-desktop/otfs/*' -d .
 rm fontawesome.zip
 
+curl -sSfLo grouns.zip 'https://dl.dafont.com/dl/?f=grouns'
+unzip -oj grouns.zip 'Grouns.otf' -d .
+rm grouns.zip
+
+curl -sSfLo vtks_sabonete.zip 'https://dl.dafont.com/dl/?f=vtks_sabonete'
+unzip -oj vtks_sabonete.zip 'VTKS SABONETE.ttf' -d .
+rm vtks_sabonete.zip
+
+curl -sSfLo road_rage.zip 'https://dl.dafont.com/dl/?f=road_rage'
+unzip -oj road_rage.zip 'Road_Rage.otf' -d .
+rm road_rage.zip
+
+curl -sSfLo pescante.zip 'https://fontesk.com/download/83662/'
+unzip -oj pescante.zip 'fonts/Pescante-Normal.otf' -d .
+rm pescante.zip
+
 cd -
