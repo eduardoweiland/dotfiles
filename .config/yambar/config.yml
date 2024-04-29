@@ -63,7 +63,7 @@ bar:
               - map:
                   conditions:
                     ~activated: { empty: {} }
-                    app-id == "firefox": { string: { text: "", font: *icon } }
+                    app-id == "org.mozilla.firefox": { string: { text: "", font: *icon } }
                     app-id == "Alacritty": { string: { text: "", font: *icon } }
               - map:
                   conditions:
@@ -102,24 +102,25 @@ bar:
 
   right:
     - network:
-        name: enp2s0
+        spacing: 14
         content:
           list:
-            spacing: 3
             on-click: nm-connection-editor
             items:
-              - string: { text: "", font: *icon }
-              - string: { text: "{ipv4}" }
-
-    - network:
-        name: tun0
-        content:
-          list:
-            spacing: 3
-            on-click: nm-connection-editor
-            items:
-              - string: { text: "", font: *icon }
-              - string: { text: "{ipv4}" }
+              - map:
+                  conditions:
+                    name == "enp2s0": 
+                      list:
+                        spacing: 3
+                        items:
+                          - string: { text: "", font: *icon }
+                          - string: { text: "{ipv4}" }
+                    name == "tun0":
+                      list:
+                        spacing: 3
+                        items:
+                          - string: { text: "", font: *icon }
+                          - string: { text: "{ipv4}" }
 
     - script:
         path: ~/.config/yambar/sensors.sh
