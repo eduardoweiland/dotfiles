@@ -18,29 +18,29 @@ key = "NumpadEnter"
 [mouse]
 hide_when_typing = true
 
-[colors]
-draw_bold_text_with_bright_colors = true
-
+# Colors from darker variant of onedark vim theme
+# background modified to match my modified bg0 color
+# https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua
 [colors.primary]
-background = "#1e1e1e"
-foreground = "#dcdcdc"
+background = "#1e2127"
+foreground = "#a0a8b7"
 
 [colors.normal]
-black = "#3f3f3f"
-blue = "#9ab8d7"
-cyan = "#8cd0d3"
-green = "#60b48a"
-magenta = "#dc8cc3"
-red = "#705050"
-white = "#dcdcdc"
-yellow = "#dfaf8f"
+black = "#535965"
+blue = "#4fa6ed"
+cyan = "#48b0bd"
+green = "#8ebd6b"
+magenta = "#bf68d9"
+red = "#e55561"
+white = "#a0a8b7"
+yellow = "#e2b86b"
 
 [colors.bright]
-black = "#709080"
-blue = "#94bff3"
-cyan = "#93e0e3"
-green = "#72d5a3"
-magenta = "#ec93d3"
-red = "#dca3a3"
-white = "#ffffff"
-yellow = "#f0dfaf"
+black = "#535965"
+blue = "#4fa6ed"
+cyan = "#48b0bd"
+green = "#8ebd6b"
+magenta = "#bf68d9"
+red = "#e55561"
+white = "#a0a8b7"
+yellow = "#e2b86b"
