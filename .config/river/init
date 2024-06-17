@@ -124,6 +124,7 @@ riverctl rule-add -app-id nm-connection-editor  float
 riverctl rule-add -app-id galculator            float
 riverctl rule-add -app-id org.mozilla.firefox   ssd
 riverctl rule-add -title  Picture-in-Picture    float
+riverctl rule-add -app-id Spotify               tags $((1 << 8))
 
 
 #################
