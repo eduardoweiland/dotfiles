@@ -118,13 +118,14 @@ riverctl map layout None  D send-layout-cmd rivertile "main-location right"
 ## RULES ##
 ###########
 
-riverctl rule-add -app-id blueman-manager       float
-riverctl rule-add -app-id pavucontrol           float
-riverctl rule-add -app-id nm-connection-editor  float
-riverctl rule-add -app-id galculator            float
-riverctl rule-add -app-id org.mozilla.firefox   ssd
-riverctl rule-add -title  Picture-in-Picture    float
-riverctl rule-add -app-id Spotify               tags $((1 << 8))
+riverctl rule-add -app-id blueman-manager               float
+riverctl rule-add -app-id org.pulseaudio.pavucontrol    float
+riverctl rule-add -app-id org.pulseaudio.pavucontrol    ssd
+riverctl rule-add -app-id nm-connection-editor          float
+riverctl rule-add -app-id galculator                    float
+riverctl rule-add -app-id org.mozilla.firefox           ssd
+riverctl rule-add -title  Picture-in-Picture            float
+riverctl rule-add -app-id Spotify                       tags $((1 << 8))
 
 
 #################
