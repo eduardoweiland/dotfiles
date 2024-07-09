@@ -1,7 +1,7 @@
-# Oxide theme for Zsh
+# Modified Oxide theme for Zsh
 #
-# Author: Diki Ananta <diki1aap@gmail.com>
-# Repository: https://github.com/dikiaap/dotfiles
+# Original Author: Diki Ananta <diki1aap@gmail.com>
+# Original Repository: https://github.com/dikiaap/dotfiles
 # License: MIT
 
 # Prompt:
@@ -26,20 +26,11 @@ setopt PROMPT_SUBST
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
-# Use True color (24-bit) if available.
-if [[ "${terminfo[colors]}" -ge 256 ]]; then
-    oxide_turquoise="%F{73}"
-    oxide_orange="%F{179}"
-    oxide_red="%F{167}"
-    oxide_limegreen="%F{107}"
-else
-    oxide_turquoise="%F{cyan}"
-    oxide_orange="%F{yellow}"
-    oxide_red="%F{red}"
-    oxide_limegreen="%F{green}"
-fi
-
-# Reset color.
+# Modified to always use default terminal colors
+oxide_turquoise="%F{cyan}"
+oxide_orange="%F{yellow}"
+oxide_red="%F{red}"
+oxide_limegreen="%F{green}"
 oxide_reset_color="%f"
 
 # VCS style formats.
