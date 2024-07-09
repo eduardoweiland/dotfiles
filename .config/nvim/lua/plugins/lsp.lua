@@ -25,7 +25,20 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       for _, ls in pairs(require('mason-lspconfig').get_installed_servers()) do
-        require('lspconfig')[ls].setup({ on_attach = on_attach, capabilities = capabilities })
+        if ls == 'volar' then
+          require('lspconfig')[ls].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+            filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+            init_options = {
+              vue = {
+                hybridMode = false,
+              },
+            },
+          })
+        else
+          require('lspconfig')[ls].setup({ on_attach = on_attach, capabilities = capabilities })
+        end
       end
     end,
   },
