@@ -14,6 +14,7 @@ set.scrolloff    = 5              -- Keep 5 lines between cursor and screen bord
 set.shortmess    = 'aoOstTcF'     -- Avoid showing extra messages
 set.inccommand   = 'split'        -- Preview substitute results in split panel
 set.clipboard    = 'unnamedplus'  -- Enable integration with system clipboard
+set.backupcopy   = 'yes'          -- Create a backup and ovewrite original file (works better with docker bind mounts)
 
 -- Completion options
 set.pumheight   = 10         -- Maximum number of suggestions shown
