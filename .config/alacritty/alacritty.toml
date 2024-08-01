@@ -18,6 +18,12 @@ key = "NumpadEnter"
 [mouse]
 hide_when_typing = true
 
+[window]
+opacity = 0.96
+
+[colors]
+transparent_background_colors = true
+
 # Colors from darker variant of onedark vim theme
 # background modified to match my modified bg0 color
 # https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua
