@@ -34,14 +34,14 @@ do
     riverctl map $mode Super Down                  spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%"
 
     # Media players
-    riverctl map $mode None  XF86AudioMedia        spawn "playerctl play-pause"
-    riverctl map $mode None  XF86AudioPlay         spawn "playerctl play-pause"
-    riverctl map $mode None  XF86AudioPause        spawn "playerctl play-pause"
-    riverctl map $mode None  XF86AudioPrev         spawn "playerctl previous"
-    riverctl map $mode None  XF86AudioNext         spawn "playerctl next"
-    riverctl map $mode Super Space                 spawn "playerctl play-pause"
-    riverctl map $mode Super Left                  spawn "playerctl previous"
-    riverctl map $mode Super Right                 spawn "playerctl next"
+    riverctl map $mode None  XF86AudioMedia        spawn "playerctl -i firefox play-pause"
+    riverctl map $mode None  XF86AudioPlay         spawn "playerctl -i firefox play-pause"
+    riverctl map $mode None  XF86AudioPause        spawn "playerctl -i firefox play-pause"
+    riverctl map $mode None  XF86AudioPrev         spawn "playerctl -i firefox previous"
+    riverctl map $mode None  XF86AudioNext         spawn "playerctl -i firefox next"
+    riverctl map $mode Super Space                 spawn "playerctl -i firefox play-pause"
+    riverctl map $mode Super Left                  spawn "playerctl -i firefox previous"
+    riverctl map $mode Super Right                 spawn "playerctl -i firefox next"
 done
 
 
